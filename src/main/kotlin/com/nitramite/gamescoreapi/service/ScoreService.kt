@@ -20,4 +20,9 @@ class ScoreService(private val scoreRepository: ScoreRepository) {
         return if (score.isPresent) Score.fromDao(score.get()) else null
     }
 
+    fun getScoreByName(name: String): Score? {
+        val score: Optional<ScoreEntity> = scoreRepository.findAllByName(name)
+        return if (score.isPresent) Score.fromDao(score.get()) else null
+    }
+
 }
