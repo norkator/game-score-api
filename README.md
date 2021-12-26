@@ -5,6 +5,20 @@ Work in progress!
 Spring based score api for generic games. I use this for Spring and Kotlin learning. Requirement for this project is to
 be as simple as possible with as less code as possible.
 
+-------------------------
+
+### Todo list
+
+- [x] Implement skeleton structure
+- [x] Create score controller
+- [x] Create score model
+- [x] Create score entity
+- [x] Create score repository
+- [x] Create score service
+- [ ] Learn migrations (create score entity table)
+
+-------------------------
+
 
 Table of contents
 =================
