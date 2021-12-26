@@ -9,13 +9,19 @@ be as simple as possible with as less code as possible.
 
 ### Todo list
 
-- [x] Implement skeleton structure
-- [x] Create score controller
-- [x] Create score model
-- [x] Create score entity
-- [x] Create score repository
-- [x] Create score service
-- [ ] Learn migrations (create score entity table)
+- [x] Implement skeleton structure.
+- [x] Create score controller.
+- [x] Create score model.
+- [x] Create score entity.
+- [x] Create score repository.
+- [x] Create score service.
+- [ ] Learn migrations.
+    - [ ] Create score entity table.
+- [ ] Learn and create tests.
+- [ ] Create build pipeline.
+- [ ] Craft fully functional game score api.
+    - [ ] Planning.
+- [ ] Documentations and drawings.
 
 -------------------------
 
