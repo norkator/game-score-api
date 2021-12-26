@@ -7,8 +7,12 @@ class ScoreEntity(
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(nullable = false)
     val id: Int,
 
     @Column(nullable = false)
-    val name: String
+    val name: String,
+
+    @Column(nullable = false)
+    val score: Int,
 )
