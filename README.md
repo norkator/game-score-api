@@ -21,6 +21,7 @@ be as simple as possible with as less code as possible.
 - [ ] Create build pipeline.
 - [ ] Craft fully functional game score api.
     - [ ] Planning.
+- [ ] Docker configurations.
 - [ ] Documentations and drawings.
 
 -------------------------
