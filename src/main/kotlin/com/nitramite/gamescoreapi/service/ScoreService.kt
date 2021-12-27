@@ -4,13 +4,17 @@ import com.nitramite.gamescoreapi.dao.ScoreEntity
 import com.nitramite.gamescoreapi.model.Score
 import com.nitramite.gamescoreapi.repository.ScoreRepository
 import org.springframework.stereotype.Service
+import java.time.Instant
 import java.util.*
 
 @Service
 class ScoreService(private val scoreRepository: ScoreRepository) {
 
-    fun addScore(name: String, score: Long): Score {
-        val newScore: ScoreEntity = ScoreEntity(null, name, score)
+    fun addScore(gameId: Long, clientUid: String, score: Long): Score {
+        val newScore: ScoreEntity = ScoreEntity(null, gameId, clientUid, score)
+        println("Hello World")
+        newScore.createdAt = Instant.now()
+        newScore.updatedAt = Instant.now()
         scoreRepository.save(newScore)
         return Score.fromDao(newScore)
     }
@@ -20,8 +24,8 @@ class ScoreService(private val scoreRepository: ScoreRepository) {
         return if (score.isPresent) Score.fromDao(score.get()) else null
     }
 
-    fun getScoreByName(name: String): Score? {
-        val score: Optional<ScoreEntity> = scoreRepository.findAllByName(name)
+    fun getScoreByGameIdAndClientUid(gameId: Long, gameUid: String): Score? {
+        val score: Optional<ScoreEntity> = scoreRepository.findAllByGameIdAndClientUid(gameId, gameUid)
         return if (score.isPresent) Score.fromDao(score.get()) else null
     }
 

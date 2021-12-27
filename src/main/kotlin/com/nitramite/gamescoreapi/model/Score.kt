@@ -8,8 +8,8 @@ class Score(
     val gameId: Long,
     var clientUid: String,
     var score: Long = 0,
-    val createdAt: Instant,
-    val updatedAt: Instant
+    val createdAt: Instant = Instant.now(),
+    val updatedAt: Instant = Instant.now()
 ) {
     companion object {
         fun fromDao(scoreEntity: ScoreEntity) = Score(
