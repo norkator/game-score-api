@@ -17,7 +17,7 @@ CREATE TABLE client
 CREATE TABLE score
 (
     id        BIGINT,
-    gameId    BIGINT,
+    gameId    BIGINT UNIQUE,
     clientUid VARCHAR UNIQUE,
     score     BIGINT,
     updatedAt DATE DEFAULT now(),
@@ -27,9 +27,9 @@ CREATE TABLE score
 CREATE TABLE achievement
 (
     id                BIGINT,
-    gameId            BIGINT,
+    gameId            BIGINT UNIQUE,
     clientUid         VARCHAR UNIQUE,
-    achievementTypeId BIGINT,
+    achievementTypeId BIGINT UNIQUE,
     updatedAt         DATE DEFAULT now(),
     createdAt         DATE DEFAULT now()
 );
