@@ -8,6 +8,13 @@ Content-Type: application/json
 }
 
 ### Add client
+POST http://localhost:8080/clients/client
+Content-Type: application/json
+
+{
+  "clientUid": "testclient2"
+}
+
 
 ### Post new score
 POST http://localhost:8080/scores/score
