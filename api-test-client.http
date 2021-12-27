@@ -1,6 +1,13 @@
 ## Add game
+POST http://localhost:8080/games/game
+Content-Type: application/json
 
-## Add client
+{
+  "name": "Test game",
+  "description": "Super fun test game"
+}
+
+### Add client
 
 ### Post new score
 POST http://localhost:8080/scores/score
