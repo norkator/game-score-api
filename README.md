@@ -18,6 +18,8 @@ be as simple as possible with as less code as possible.
 - [x] Learn migrations.
     - [x] Create score entity and other tables.
 - [ ] Learn and create tests.
+    - [x] Add a skeleton of actions builds pipeline.
+    - [ ] Add tests testing controllers.
 - [ ] Create build pipeline.
 - [ ] Craft fully functional game score api.
     - [ ] Planning.
