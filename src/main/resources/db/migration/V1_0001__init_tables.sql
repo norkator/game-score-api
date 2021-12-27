@@ -10,8 +10,8 @@ CREATE TABLE game
 CREATE TABLE client
 (
     clientUid VARCHAR UNIQUE,
-    updatedAt DATE DEFAULT now(),
-    createdAt DATE DEFAULT now()
+    updatedAt TIMESTAMP DEFAULT now(),
+    createdAt TIMESTAMP DEFAULT now()
 );
 
 CREATE TABLE score
@@ -20,8 +20,8 @@ CREATE TABLE score
     gameId    BIGINT UNIQUE,
     clientUid VARCHAR UNIQUE,
     score     BIGINT,
-    updatedAt DATE DEFAULT now(),
-    createdAt DATE DEFAULT now()
+    updatedAt TIMESTAMP DEFAULT now(),
+    createdAt TIMESTAMP DEFAULT now()
 );
 
 CREATE TABLE achievement
@@ -30,8 +30,8 @@ CREATE TABLE achievement
     gameId            BIGINT UNIQUE,
     clientUid         VARCHAR UNIQUE,
     achievementTypeId BIGINT UNIQUE,
-    updatedAt         DATE DEFAULT now(),
-    createdAt         DATE DEFAULT now()
+    updatedAt         TIMESTAMP DEFAULT now(),
+    createdAt         TIMESTAMP DEFAULT now()
 );
 
 CREATE TABLE achievementType

@@ -11,16 +11,18 @@ class ScoreEntity(
     @Column(nullable = false)
     val id: Long? = null,
 
-    @Column(nullable = false, unique = true)
+    @Column(name = "gameid", nullable = false, unique = true)
     val gameId: Long,
 
-    @Column(nullable = false, unique = true)
+    @Column(name = "clientuid", nullable = false, unique = true)
     val clientUid: String,
 
     @Column(nullable = false)
     val score: Long,
 
-    val createdAt: Instant = Instant.now(),
+    @Column(name = "createdat")
+    var createdAt: Instant = Instant.now(),
 
-    val updatedAt: Instant = Instant.now()
+    @Column(name = "updatedat")
+    var updatedAt: Instant = Instant.now()
 )
