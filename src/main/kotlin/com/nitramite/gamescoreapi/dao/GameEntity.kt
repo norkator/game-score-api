@@ -12,7 +12,7 @@ class GameEntity(
 
     val name: String,
 
-    val description: String,
+    val description: String?,
 
     val enabled: Boolean = true,
 )

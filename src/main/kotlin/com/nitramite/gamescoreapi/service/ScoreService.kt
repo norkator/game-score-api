@@ -11,8 +11,7 @@ import java.util.*
 class ScoreService(private val scoreRepository: ScoreRepository) {
 
     fun addScore(gameId: Long, clientUid: String, score: Long): Score {
-        val newScore: ScoreEntity = ScoreEntity(null, gameId, clientUid, score)
-        println("Hello World")
+        val newScore = ScoreEntity(null, gameId, clientUid, score)
         newScore.createdAt = Instant.now()
         newScore.updatedAt = Instant.now()
         scoreRepository.save(newScore)

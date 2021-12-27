@@ -1,11 +1,10 @@
 package com.nitramite.gamescoreapi.model
 
 import com.nitramite.gamescoreapi.dao.GameEntity
-import java.time.Instant
 
 class Game(
     val id: Long = 0,
-    var name: String? = null,
+    var name: String,
     var description: String? = null,
     var enabled: Boolean = true
 ) {
