@@ -1,17 +1,24 @@
 package com.nitramite.gamescoreapi.model
 
 import com.nitramite.gamescoreapi.dao.ScoreEntity
+import java.time.Instant
 
 class Score(
     val id: Long = 0,
-    var name: String? = null,
+    val gameId: Long,
+    var clientUid: String,
     var score: Long = 0,
+    val createdAt: Instant,
+    val updatedAt: Instant
 ) {
     companion object {
         fun fromDao(scoreEntity: ScoreEntity) = Score(
             scoreEntity.id!!,
-            scoreEntity.name,
-            scoreEntity.score
+            scoreEntity.gameId,
+            scoreEntity.clientUid,
+            scoreEntity.score,
+            scoreEntity.createdAt,
+            scoreEntity.updatedAt
         )
     }
 }

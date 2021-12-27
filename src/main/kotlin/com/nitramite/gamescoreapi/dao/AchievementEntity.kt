@@ -3,8 +3,8 @@ package com.nitramite.gamescoreapi.dao
 import java.time.Instant
 import javax.persistence.*
 
-@Entity(name = "score")
-class ScoreEntity(
+@Entity(name = "achievement")
+class AchievementEntity(
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,8 +17,8 @@ class ScoreEntity(
     @Column(nullable = false, unique = true)
     val clientUid: String,
 
-    @Column(nullable = false)
-    val score: Long,
+    @Column(nullable = false, unique = true)
+    val achievementTypeId: Long,
 
     val createdAt: Instant = Instant.now(),
 
