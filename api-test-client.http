@@ -12,9 +12,8 @@ POST http://localhost:8080/clients/client
 Content-Type: application/json
 
 {
-  "clientUid": "testclient2"
+  "clientUid": "testclient"
 }
-
 
 ### Post new score
 POST http://localhost:8080/scores/score
@@ -28,3 +27,26 @@ Content-Type: application/json
 
 ### Get score
 GET http://localhost:8080/scores/score?gameId=1&clientUid=testclient
+
+
+### Add another client
+POST http://localhost:8080/clients/client
+Content-Type: application/json
+
+{
+  "clientUid": "testclient2"
+}
+
+### Post another new score
+POST http://localhost:8080/scores/score
+Content-Type: application/json
+
+{
+  "gameId": 1,
+  "clientUid": "testclient2",
+  "score": 120
+}
+
+
+### Get best scores by game from best to worse order
+GET http://localhost:8080/scores/bestByGame?gameId=1

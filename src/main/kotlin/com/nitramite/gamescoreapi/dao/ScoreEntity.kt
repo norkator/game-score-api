@@ -11,10 +11,10 @@ class ScoreEntity(
     @Column(nullable = false)
     val id: Long? = null,
 
-    @Column(name = "gameid", nullable = false, unique = true)
+    @Column(name = "gameid", nullable = false, unique = false)
     val gameId: Long,
 
-    @Column(name = "clientuid", nullable = false, unique = true)
+    @Column(name = "clientuid", nullable = false, unique = false)
     val clientUid: String,
 
     @Column(nullable = false)
