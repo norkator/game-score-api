@@ -15,6 +15,11 @@ class ScoreController(
         return scoreService.getScoreByGameIdAndClientUid(gameId, clientUid)
     }
 
+    @GetMapping("/bestByGame")
+    fun getBestScoresByGame(@RequestParam gameId: Long): List<Score> {
+        return scoreService.getBestScoresByGameId(gameId)
+    }
+
     @PostMapping("/score")
     fun postScore(@RequestBody score: Score): Score? {
         return scoreService.addScore(score.gameId, score.clientUid, score.score)

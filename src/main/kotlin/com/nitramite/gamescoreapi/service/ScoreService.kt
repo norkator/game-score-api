@@ -36,4 +36,13 @@ class ScoreService(private val scoreRepository: ScoreRepository) {
         return if (score.isPresent) Score.fromDao(score.get()) else null
     }
 
+    fun getBestScoresByGameId(gameId: Long): ArrayList<Score> {
+        val scoreEntities: List<ScoreEntity> = scoreRepository.findAllByGameIdOrderByScoreDesc(gameId)
+        val scores: ArrayList<Score> = ArrayList()
+        scoreEntities.forEach {
+            scores.add(Score.fromDao(it))
+        }
+        return scores
+    }
+
 }
