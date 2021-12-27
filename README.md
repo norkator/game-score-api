@@ -24,7 +24,7 @@ be as simple as possible with as less code as possible.
 - [ ] Craft fully functional game score api.
     - [ ] Planning.
 - [ ] Some simple authentication system.
-    - [ ] Planning.
+    - [ ] Planning /Basic auth?
 - [ ] Docker configurations.
 - [ ] Documentations and drawings.
     - [x] Database structure drawing.
