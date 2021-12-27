@@ -44,6 +44,14 @@ Stack
 * Kotlin
 * PostgreSQL
 
+
+Structure
+============
+Sketch of planned database structure. 
+
+![game-score-api-drawio](./doc/game-score-api.drawio.png)
+
+
 Environment
 ============
 todo...
