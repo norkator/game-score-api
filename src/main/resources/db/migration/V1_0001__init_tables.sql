@@ -1,7 +1,9 @@
 /* Create tables */
 CREATE TABLE game
 (
-    id          BIGINT UNIQUE,
+    id          BIGINT UNIQUE NOT NULL
+        CONSTRAINT game_pk
+            PRIMARY KEY,
     name        VARCHAR,
     description TEXT,
     enabled     BOOLEAN DEFAULT true
@@ -16,7 +18,9 @@ CREATE TABLE client
 
 CREATE TABLE score
 (
-    id        BIGINT,
+    id        BIGINT NOT NULL
+        CONSTRAINT score_pk
+            PRIMARY KEY,
     gameId    BIGINT UNIQUE,
     clientUid VARCHAR UNIQUE,
     score     BIGINT,
@@ -26,7 +30,9 @@ CREATE TABLE score
 
 CREATE TABLE achievement
 (
-    id                BIGINT,
+    id                BIGINT NOT NULL
+        CONSTRAINT achievement_pk
+            PRIMARY KEY,
     gameId            BIGINT UNIQUE,
     clientUid         VARCHAR UNIQUE,
     achievementTypeId BIGINT UNIQUE,
@@ -36,7 +42,9 @@ CREATE TABLE achievement
 
 CREATE TABLE achievementType
 (
-    id          BIGINT UNIQUE,
+    id          BIGINT UNIQUE NOT NULL
+        CONSTRAINT achievementType_pk
+            PRIMARY KEY,
     name        VARCHAR,
     description TEXT
 );
