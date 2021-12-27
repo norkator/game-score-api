@@ -15,14 +15,16 @@ be as simple as possible with as less code as possible.
 - [x] Create score entity.
 - [x] Create score repository.
 - [x] Create score service.
-- [ ] Learn migrations.
-    - [ ] Create score entity table.
+- [x] Learn migrations.
+    - [x] Create score entity and other tables.
 - [ ] Learn and create tests.
 - [ ] Create build pipeline.
 - [ ] Craft fully functional game score api.
     - [ ] Planning.
 - [ ] Docker configurations.
 - [ ] Documentations and drawings.
+    - [x] Database structure drawing.
+    - [ ] Getting started.
 
 -------------------------
 
