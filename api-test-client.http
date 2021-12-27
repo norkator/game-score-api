@@ -1,0 +1,16 @@
+## Add game
+
+## Add client
+
+### Post new score
+POST http://localhost:8080/scores/score
+Content-Type: application/json
+
+{
+  "gameId": 1,
+  "clientUid": "testclient",
+  "score": 100
+}
+
+### Get score
+GET http://localhost:8080/scores/score?gameId=1&clientUid=testclient
