@@ -11,11 +11,19 @@ import java.util.*
 class ScoreService(private val scoreRepository: ScoreRepository) {
 
     fun addScore(gameId: Long, clientUid: String, score: Long): Score {
-        val newScore = ScoreEntity(null, gameId, clientUid, score)
-        newScore.createdAt = Instant.now()
-        newScore.updatedAt = Instant.now()
-        scoreRepository.save(newScore)
-        return Score.fromDao(newScore)
+        val scoreEntity = scoreRepository.findTopByGameIdAndClientUid(gameId, clientUid);
+        if (!scoreEntity.isPresent) {
+            val newScore = ScoreEntity(null, gameId, clientUid, score)
+            newScore.createdAt = Instant.now()
+            newScore.updatedAt = Instant.now()
+            scoreRepository.save(newScore)
+            return Score.fromDao(newScore)
+        } else {
+            val existing = scoreEntity.get()
+            existing.score = score
+            scoreRepository.save(existing)
+            return Score.fromDao(existing)
+        }
     }
 
     fun getScoreById(id: Long): Score? {

@@ -18,7 +18,7 @@ class ScoreEntity(
     val clientUid: String,
 
     @Column(nullable = false)
-    val score: Long,
+    var score: Long,
 
     @Column(name = "createdat")
     var createdAt: Instant = Instant.now(),

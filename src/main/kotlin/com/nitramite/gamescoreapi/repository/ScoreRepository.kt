@@ -10,6 +10,8 @@ import javax.transaction.Transactional
 @Transactional
 interface ScoreRepository : CrudRepository<ScoreEntity, Long> {
 
+    fun findTopByGameIdAndClientUid(gameId: Long, clientUid: String): Optional<ScoreEntity>
+
     fun findAllByGameIdAndClientUid(gameId: Long, clientUid: String): Optional<ScoreEntity>
 
 }
