@@ -21,8 +21,8 @@ CREATE TABLE score
     id        BIGINT NOT NULL
         CONSTRAINT score_pk
             PRIMARY KEY,
-    gameId    BIGINT UNIQUE,
-    clientUid VARCHAR UNIQUE,
+    gameId    BIGINT,
+    clientUid VARCHAR,
     score     BIGINT,
     updatedAt TIMESTAMP DEFAULT now(),
     createdAt TIMESTAMP DEFAULT now()
@@ -63,9 +63,9 @@ alter sequence score_id_seq owned by score.id;
 
 
 /* Create constraints */
-/* alter table public.score
-     add constraint score_game_id_fk
-         foreign key (gameid) references public.game (id);*/
+alter table public.score
+    add constraint score_game_id_fk
+        foreign key (gameid) references public.game (id);
 
 alter table public.score
     add constraint score_client_clientuid_fk
