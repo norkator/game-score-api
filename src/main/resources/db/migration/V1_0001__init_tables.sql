@@ -52,18 +52,20 @@ CREATE TABLE achievementType
 
 /* Add sequences */
 create sequence game_id_seq;
-alter table game alter column id set default nextval('public.game_id_seq');
+alter table game
+    alter column id set default nextval('public.game_id_seq');
 alter sequence game_id_seq owned by game.id;
 
 create sequence score_id_seq;
-alter table score alter column id set default nextval('public.score_id_seq');
+alter table score
+    alter column id set default nextval('public.score_id_seq');
 alter sequence score_id_seq owned by score.id;
 
 
 /* Create constraints */
-alter table public.score
-    add constraint score_game_id_fk
-        foreign key (gameid) references public.game (id);
+/* alter table public.score
+     add constraint score_game_id_fk
+         foreign key (gameid) references public.game (id);*/
 
 alter table public.score
     add constraint score_client_clientuid_fk
