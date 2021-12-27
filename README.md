@@ -3,7 +3,9 @@
 Work in progress!
 
 Spring based score api for generic games. I use this for Spring and Kotlin learning. Requirement for this project is to
-be as simple as possible with as less code as possible.
+be as simple as possible with as less code as possible. Final implementation most likely uses basic authentication for
+clients to post and get results which is security wise bad, but PR's could bring more security schemas like OAuth or
+something else.
 
 -------------------------
 
@@ -50,10 +52,9 @@ Stack
 * Kotlin
 * PostgreSQL
 
-
 Structure
 ============
-Sketch of planned database structure. 
+Sketch of planned database structure.
 
 ![game-score-api-drawio](./doc/game-score-api.drawio.png)
 
