@@ -11,3 +11,5 @@ services:
       - DATABASE_URL=
       - DATABASE_USERNAME=
       - DATABASE_PASSWORD=
+      - BASIC_AUTH_USERNAME=
+      - BASIC_AUTH_PASSWORD=
