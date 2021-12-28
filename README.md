@@ -29,9 +29,11 @@ Stack
 
 Structure
 ============
-Sketch of planned database structure.
+Sketch of planned use case.
+![game-score-api-sequence-drawio](./doc/game-score-api-sequence.drawio.png)
 
-![game-score-api-drawio](./doc/game-score-api.drawio.png)
+Sketch of planned database structure.
+![game-score-api-db-drawio](./doc/game-score-api-db.drawio.png)
 
 
 Environment
@@ -78,12 +80,13 @@ Todo list
     - [x] Add a skeleton of actions builds pipeline.
     - [ ] Add tests testing controllers.
 - [x] Docker configurations.
-- [ ] Create build pipeline.
+- [x] Create build pipeline.
     - [x] Github container registry image via actions.
-- [ ] Craft fully functional game score api.
-    - [ ] Planning.
+- [x] Craft fully functional game score api.
+    - [x] Planning.
 - [ ] Some simple authentication system.
     - [x] Planning /Basic auth?
+    - [ ] Multi user basic auth.
 - [ ] Documentations and drawings.
     - [x] Database structure drawing.
     - [x] Getting started.
