@@ -61,6 +61,16 @@ alter table score
     alter column id set default nextval('public.score_id_seq');
 alter sequence score_id_seq owned by score.id;
 
+create sequence achievement_id_seq;
+alter table achievement
+    alter column id set default nextval('public.achievement_id_seq');
+alter sequence achievement_id_seq owned by achievement.id;
+
+create sequence achievementType_id_seq;
+alter table achievementType
+    alter column id set default nextval('public.achievementType_id_seq');
+alter sequence achievementType_id_seq owned by achievementType.id;
+
 
 /* Create constraints */
 alter table public.score
