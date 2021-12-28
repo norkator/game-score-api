@@ -11,16 +11,18 @@ class AchievementEntity(
     @Column(nullable = false)
     val id: Long? = null,
 
-    @Column(nullable = false, unique = true)
+    @Column(name = "gameid", nullable = false, unique = true)
     val gameId: Long,
 
-    @Column(nullable = false, unique = true)
+    @Column(name = "clientuid", nullable = false, unique = true)
     val clientUid: String,
 
-    @Column(nullable = false, unique = true)
+    @Column(name = "achievementtypeid", nullable = false, unique = true)
     val achievementTypeId: Long,
 
+    @Column(name = "createdat")
     val createdAt: Instant = Instant.now(),
 
+    @Column(name = "updatedat")
     val updatedAt: Instant = Instant.now()
 )
