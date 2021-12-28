@@ -32,6 +32,11 @@ Structure
 Sketch of planned use case.
 ![game-score-api-sequence-drawio](./doc/game-score-api-sequence.drawio.png)
 
+* User account is owned by a developer who manages games.
+* Less we know about game clients the better. Find a way to get device 
+  specific unique identifier to populate clientId.
+<br>
+
 Sketch of planned database structure.
 ![game-score-api-db-drawio](./doc/game-score-api-db.drawio.png)
 
@@ -59,7 +64,6 @@ Run standalone or use docker via `docker-compose up`.
 
 4. Run `docker-compose up`.
 5. Open [http://localhost:8080/](http://localhost:8080/).
-
 
 Development
 ============
