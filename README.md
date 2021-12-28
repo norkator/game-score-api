@@ -31,7 +31,7 @@ Structure
 ============
 Sketch of planned database structure.
 
-![game-score-api-drawio](./doc/game-score-api.drawio.png)
+![game-score-api-drawio](./doc/game-score-api-db.drawio.png)
 
 
 Environment
