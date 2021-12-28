@@ -26,3 +26,6 @@ hs_err_pid*
 
 # IDE
 .idea
+
+# Docker
+docker-compose.yml
