@@ -15,4 +15,7 @@ class GameEntity(
     val description: String?,
 
     val enabled: Boolean = true,
+
+    @Column(name = "userid", nullable = false)
+    val userId: Long
 )
