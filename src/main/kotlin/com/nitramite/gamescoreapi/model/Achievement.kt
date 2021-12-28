@@ -8,8 +8,8 @@ class Achievement(
     val gameId: Long,
     val clientUid: String,
     val achievementTypeId: Long,
-    val createdAt: Instant,
-    val updatedAt: Instant
+    val createdAt: Instant = Instant.now(),
+    val updatedAt: Instant = Instant.now()
 ) {
     companion object {
         fun fromDao(achievementEntity: AchievementEntity) = Achievement(
