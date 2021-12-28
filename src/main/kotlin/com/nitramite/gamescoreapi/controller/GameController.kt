@@ -12,7 +12,13 @@ class GameController(
 
     @PostMapping("/game")
     fun postGame(@RequestBody game: Game): Game? {
-        return gameService.addGame(game.name, game.description)
+        return gameService.addGame(game.name, game.description, game.userId)
     }
+
+    // @GetMapping("/game")
+    // Todo.. get game
+
+    // @GetMapping("/games")
+    // Todo.. get games
 
 }
