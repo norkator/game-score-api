@@ -11,13 +11,13 @@ class AchievementEntity(
     @Column(nullable = false)
     val id: Long? = null,
 
-    @Column(name = "gameid", nullable = false, unique = true)
+    @Column(name = "gameid", nullable = false, unique = false)
     val gameId: Long,
 
-    @Column(name = "clientuid", nullable = false, unique = true)
+    @Column(name = "clientuid", nullable = false, unique = false)
     val clientUid: String,
 
-    @Column(name = "achievementtypeid", nullable = false, unique = true)
+    @Column(name = "achievementtypeid", nullable = false, unique = false)
     val achievementTypeId: Long,
 
     @Column(name = "createdat")

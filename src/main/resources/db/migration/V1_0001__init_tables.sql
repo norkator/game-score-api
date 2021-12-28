@@ -33,9 +33,9 @@ CREATE TABLE achievement
     id                BIGINT NOT NULL
         CONSTRAINT achievement_pk
             PRIMARY KEY,
-    gameId            BIGINT UNIQUE,
-    clientUid         VARCHAR UNIQUE,
-    achievementTypeId BIGINT UNIQUE,
+    gameId            BIGINT,
+    clientUid         VARCHAR,
+    achievementTypeId BIGINT,
     updatedAt         TIMESTAMP DEFAULT now(),
     createdAt         TIMESTAMP DEFAULT now()
 );
