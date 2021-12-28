@@ -15,8 +15,8 @@ class AchievementService(
     private val achievementTypeRepository: AchievementTypeRepository
 ) {
 
-    fun addAchievementType(name: String, decsription: String): AchievementType {
-        val newAchievementType = AchievementTypeEntity(null, name, decsription)
+    fun addAchievementType(gameId: Long, name: String, decsription: String): AchievementType {
+        val newAchievementType = AchievementTypeEntity(null, gameId, name, decsription)
         achievementTypeRepository.save(newAchievementType)
         return AchievementType.fromDao(newAchievementType)
     }

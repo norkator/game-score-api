@@ -13,7 +13,11 @@ class AchievementController(
 
     @PostMapping("/achievementType")
     fun postAchievementType(@RequestBody achievementType: AchievementType): AchievementType? {
-        return achievementService.addAchievementType(achievementType.name, achievementType.description)
+        return achievementService.addAchievementType(
+            achievementType.gameId,
+            achievementType.name,
+            achievementType.description
+        )
     }
 
     @PostMapping("/achievement")

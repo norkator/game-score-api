@@ -10,6 +10,9 @@ class AchievementTypeEntity(
     @Column(nullable = false, unique = true)
     val id: Long? = null,
 
+    @Column(name = "gameid", nullable = true)
+    val gameId: Long,
+
     @Column(nullable = false)
     val name: String,
 
