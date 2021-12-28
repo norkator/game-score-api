@@ -22,12 +22,13 @@ something else.
 - [ ] Learn and create tests.
     - [x] Add a skeleton of actions builds pipeline.
     - [ ] Add tests testing controllers.
+- [x] Docker configurations.
 - [ ] Create build pipeline.
+    - [ ] Github container registry image via actions.
 - [ ] Craft fully functional game score api.
     - [ ] Planning.
 - [ ] Some simple authentication system.
     - [ ] Planning /Basic auth?
-- [ ] Docker configurations.
 - [ ] Documentations and drawings.
     - [x] Database structure drawing.
     - [ ] Getting started.
