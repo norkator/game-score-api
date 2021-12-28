@@ -45,6 +45,7 @@ CREATE TABLE achievementType
     id          BIGINT UNIQUE NOT NULL
         CONSTRAINT achievementType_pk
             PRIMARY KEY,
+    gameId      BIGINT,
     name        VARCHAR,
     description TEXT
 );
@@ -92,3 +93,7 @@ alter table public.achievement
 alter table public.achievement
     add constraint achievement_achievementtype_id_fk
         foreign key (achievementtypeid) references public.achievementtype (id);
+
+alter table public.achievementType
+    add constraint achievementType_game_id_fk
+        foreign key (gameId) references public.game (id);
