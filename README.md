@@ -14,6 +14,7 @@ Table of contents
 * [Stack](#stack)
 * [Environment](#environment)
 * [Installing](#installing)
+* [Using Github container registry image](#using-github-container-registry-image)
 * [Development](#development)
     * [Todo list](#todo-list)
 
@@ -33,9 +34,8 @@ Sketch of planned use case.
 ![game-score-api-sequence-drawio](./doc/game-score-api-sequence.drawio.png)
 
 * User account is owned by a developer who manages games.
-* Less we know about game clients the better. Find a way to get device 
-  specific unique identifier to populate clientId.
-<br>
+* Less we know about game clients the better. Find a way to get device specific unique identifier to populate clientId.
+  <br>
 
 Sketch of planned database structure.
 ![game-score-api-db-drawio](./doc/game-score-api-db.drawio.png)
@@ -64,6 +64,29 @@ Run standalone or use docker via `docker-compose up`.
 
 4. Run `docker-compose up`.
 5. Open [http://localhost:8080/](http://localhost:8080/).
+
+Using Github container registry image
+============
+Create file `docker-compose.yml` and paste in following contents:
+
+```yaml
+version: '3'
+services:
+  game-score-api:
+    container_name: game-score-api
+    image: ghcr.io/norkator/game-score-api:latest
+    ports:
+      - "8080:8080"
+    environment:
+      - DATABASE_URL=
+      - DATABASE_USERNAME=
+      - DATABASE_PASSWORD=
+      - BASIC_AUTH_USERNAME=
+      - BASIC_AUTH_PASSWORD=
+```
+
+then run `sudo docker-compose up` and you have pre build container running.
+
 
 Development
 ============
