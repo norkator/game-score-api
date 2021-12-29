@@ -2,17 +2,22 @@ package com.nitramite.gamescoreapi.dao
 
 import javax.persistence.*
 
-@Entity(name = "user")
+@Entity(name = "users")
 class UserEntity(
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(nullable = false)
-    val id: Long? = null,
+    val id: Long,
 
+    @Column(nullable = false)
     val username: String,
 
+    @Column(nullable = false)
     val password: String,
+
+    @Column(nullable = false)
+    val role: String = "USER",
 
     val enabled: Boolean = true
 
