@@ -14,6 +14,9 @@ Table of contents
 * [Stack](#stack)
 * [Environment](#environment)
 * [Installing](#installing)
+* [API docs](#api-docs)
+    * [Admin only](#admin-only)
+    * [Everyone](#everyone)
 * [Using Github container registry image](#using-github-container-registry-image)
 * [Development](#development)
     * [Todo list](#todo-list)
@@ -63,6 +66,52 @@ Run standalone or use docker via `docker-compose up`.
 4. Run `docker-compose up`.
 5. Open [http://localhost:8080/](http://localhost:8080/).
 
+API docs
+============
+
+Admin only
+-------
+Create and get games:
+
+```shell
+curl -X POST -H "Authorization: Basic <content>" -H "Content-Type: application/json" -d '{"name":"test game", "description":"example game", "userId": 1}' http://localhost:8080/games/game 
+curl -X GET -H "Authorization: Basic <content>" -H "Content-Type: application/json" http://localhost:8080/games/games\?gameId\=1 
+```
+
+Everyone
+-------
+Post a new client, like device running game:
+
+```shell
+curl -X POST -H "Content-Type: application/json" -d '{"clientUid":"testclientuid"}' http://localhost:8080/clients/client 
+```
+
+Get scores, different ways:
+
+```shell
+curl -X GET -H "Content-Type: application/json" http://localhost:8080/scores/score\?gameId\=1\&clientUid\=testclientuid
+curl -X GET -H "Content-Type: application/json" http://localhost:8080/scores/bestByGame\?gameId\=1
+```
+
+Post new score:
+
+```shell
+curl -X POST -H "Content-Type: application/json" -d '{"gameId":1, "clientUid": "testclientuid", "score": 100}' http://localhost:8080/scores/score 
+```
+
+Post new achievement:
+
+```shell
+curl -X POST -H "Content-Type: application/json" -d '{"gameId":1, "clientUid": "testclientuid", "achievementTypeId": 1}' http://localhost:8080/achievements/achievement 
+```
+
+Get achievements, different ways:
+
+```shell
+curl -X GET -H "Content-Type: application/json" http://localhost:8080/achievements/achievementsByGameId\?gameId\=1
+curl -X GET -H "Content-Type: application/json" http://localhost:8080/achievements/achievementsByGameIdAndClientUid\?gameId\=1\&clientUid\=testclientuid
+```
+
 Using Github container registry image
 ============
 Create file `docker-compose.yml` and paste in following contents:
@@ -84,6 +133,7 @@ services:
 then run `sudo docker-compose up --build` and you have pre-built container running.
 
 rebuild with the latest changes (this deletes image):
+
 ```shell
 sudo docker image ls
 sudo docker image rm <IMAGE ID> -f
