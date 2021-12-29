@@ -12,4 +12,6 @@ interface UserRepository : CrudRepository<UserEntity, Long> {
 
     fun findByUsernameAndPasswordAndEnabledTrue(username: String, password: String): Optional<UserEntity>
 
+    fun findByUsernameAndEnabledTrue(username: String): Optional<UserEntity>
+
 }
