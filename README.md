@@ -81,7 +81,16 @@ services:
       - DATABASE_PASSWORD=
 ```
 
-then run `sudo docker-compose up` and you have pre build container running.
+then run `sudo docker-compose up --build` and you have pre-built container running.
+
+rebuild with the latest changes (this deletes image):
+```shell
+sudo docker image ls
+sudo docker image rm <IMAGE ID> -f
+sudo docker-compose up --build
+```
+
+start as service `docker-compose up -d --build`
 
 
 Development
@@ -109,7 +118,7 @@ Todo list
     - [x] Planning.
 - [ ] Some simple authentication system.
     - [x] Planning /Basic auth?
-    - [ ] Multi user basic auth.
+    - [x] Multi user basic auth.
 - [ ] Documentations and drawings.
     - [x] Database structure drawing.
     - [x] Getting started.
