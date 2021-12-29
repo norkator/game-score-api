@@ -58,8 +58,6 @@ Run standalone or use docker via `docker-compose up`.
   - DATABASE_URL=
   - DATABASE_USERNAME=
   - DATABASE_PASSWORD=
-  - BASIC_AUTH_USERNAME=
-  - BASIC_AUTH_PASSWORD=
 ```
 
 4. Run `docker-compose up`.
@@ -81,8 +79,6 @@ services:
       - DATABASE_URL=
       - DATABASE_USERNAME=
       - DATABASE_PASSWORD=
-      - BASIC_AUTH_USERNAME=
-      - BASIC_AUTH_PASSWORD=
 ```
 
 then run `sudo docker-compose up` and you have pre build container running.

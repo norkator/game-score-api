@@ -1,8 +1,10 @@
 ## Add game
 POST http://localhost:8080/games/game
 Content-Type: application/json
+Authorization: Basic YWRtaW46YWRtaW4=
 
 {
+  "userId": 1,
   "name": "Test game",
   "description": "Super fun test game"
 }
