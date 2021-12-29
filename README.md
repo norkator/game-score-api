@@ -86,10 +86,17 @@ curl -X POST -H "Authorization: Basic <content>" -H "Content-Type: application/j
 
 Everyone
 -------
-Post a new client, like device running game:
+Post a new client, like device running game. Use this if unique uid is generated at a device side.
 
 ```shell
 curl -X POST -H "Content-Type: application/json" -d '{"clientUid":"testclientuid"}' http://localhost:8080/clients/client 
+```
+
+Get random generated uid for a client in case if unique identifiers are not provided by a device.
+
+```shell
+curl -X GET -H "Content-Type: application/json" http://localhost:8080/clients/generateUid
+
 ```
 
 Get scores, different ways:
