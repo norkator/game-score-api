@@ -21,6 +21,7 @@ class CustomAuthenticationProvider(
         val username: String = authentication.name
         val password: String = authentication.credentials.toString()
 
+        // Todo implemented salted hashed passwords
         val user: User = userService.findUserByUsernameAndPassword(username, password) ?: return null
 
         val authorities: MutableList<GrantedAuthority> = ArrayList()
