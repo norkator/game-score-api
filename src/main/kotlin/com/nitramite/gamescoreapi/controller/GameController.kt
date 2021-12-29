@@ -16,9 +16,13 @@ class GameController(
     }
 
     // @GetMapping("/game")
-    // Todo.. get game
+    // fun getGame(@RequestBody game: Game): Game? {
+    //     return null
+    // }
 
-    // @GetMapping("/games")
-    // Todo.. get games
+    @GetMapping("/games")
+    fun getGames(@RequestParam gameId: Long): ArrayList<Game> {
+        return gameService.getGames(gameId)
+    }
 
 }

@@ -7,4 +7,8 @@ import javax.transaction.Transactional
 
 @Repository
 @Transactional
-interface GameRepository : CrudRepository<GameEntity, Long>
+interface GameRepository : CrudRepository<GameEntity, Long> {
+
+    fun findAllByUserIdAndId(userId: Long, gameId: Long): List<GameEntity>
+
+}

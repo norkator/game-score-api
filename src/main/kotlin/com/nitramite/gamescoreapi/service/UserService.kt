@@ -16,4 +16,9 @@ class UserService(
         return if (user.isPresent) User.fromDao(user.get()) else null
     }
 
+    fun findUserByUsername(username: String): User? {
+        val user: Optional<UserEntity> = userRepository.findByUsernameAndEnabledTrue(username)
+        return if (user.isPresent) User.fromDao(user.get()) else null
+    }
+
 }
