@@ -175,7 +175,7 @@ Todo list
 - [ ] Some simple authentication system.
     - [x] Planning /Basic auth?
     - [x] Multi user basic auth.
-- [ ] Documentations and drawings.
+- [x] Documentations and drawings.
     - [x] Database structure drawing.
     - [x] Getting started.
   
