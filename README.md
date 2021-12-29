@@ -78,6 +78,12 @@ curl -X POST -H "Authorization: Basic <content>" -H "Content-Type: application/j
 curl -X GET -H "Authorization: Basic <content>" -H "Content-Type: application/json" http://localhost:8080/games/games\?gameId\=1 
 ```
 
+Create achievements for game:
+
+```shell
+curl -X POST -H "Authorization: Basic <content>" -H "Content-Type: application/json" -d '{"gameId":1, "name": "achievement name", "description":"example description"}' http://localhost:8080/achievements/achievementType
+```
+
 Everyone
 -------
 Post a new client, like device running game:
