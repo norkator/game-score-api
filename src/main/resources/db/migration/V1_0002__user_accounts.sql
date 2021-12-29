@@ -10,6 +10,10 @@ create table users
     enabled  BOOLEAN DEFAULT true
 );
 
+/* Unique index */
+create unique index users_username_uindex
+    on users (username);
+
 
 /* Add sequences */
 create sequence users_id_seq;
@@ -27,4 +31,3 @@ alter table game
 alter table game
     add constraint game_users_id_fk
         foreign key (userid) references users (id);
-

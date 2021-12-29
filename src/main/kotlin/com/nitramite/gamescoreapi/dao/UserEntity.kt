@@ -10,7 +10,7 @@ class UserEntity(
     @Column(nullable = false)
     val id: Long,
 
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     val username: String,
 
     @Column(nullable = false)
