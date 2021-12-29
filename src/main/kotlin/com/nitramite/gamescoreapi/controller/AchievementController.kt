@@ -11,7 +11,6 @@ class AchievementController(
     private val achievementService: AchievementService,
 ) {
 
-    // Todo, implement authentication
     @PostMapping("/achievementType")
     fun postAchievementType(@RequestBody achievementType: AchievementType): AchievementType? {
         return achievementService.addAchievementType(

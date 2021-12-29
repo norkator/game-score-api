@@ -35,6 +35,7 @@ class SecurityConfig(
             .antMatchers(HttpMethod.GET, "/games/**").permitAll()
             .antMatchers(HttpMethod.PATCH, "/games/**").permitAll()
             .antMatchers(HttpMethod.PUT, "/games/**").permitAll()
+            .antMatchers(HttpMethod.POST, "/achievements/achievementType").permitAll()
             .and()
             .csrf().disable()
             .formLogin().disable()
