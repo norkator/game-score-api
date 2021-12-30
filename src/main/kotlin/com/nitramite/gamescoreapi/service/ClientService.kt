@@ -31,6 +31,7 @@ class ClientService(private val clientRepository: ClientRepository) {
     fun patchNickname(clientUid: String, nickname: String?): Client {
         val clientEntity = clientRepository.findByClientUid(clientUid) ?: throw EntityNotFoundException()
         clientEntity.nickname = nickname
+        clientEntity.updatedAt = Instant.now()
         clientRepository.save(clientEntity)
         return Client.fromDao(clientEntity)
     }
