@@ -16,8 +16,8 @@ class ClientController(
     }
 
     @PostMapping("/client")
-    fun postClient(@RequestBody Client: Client): Client? {
-        return clientService.addClient(Client.clientUid)
+    fun postClient(@RequestBody client: Client): Client? {
+        return clientService.addClient(client.clientUid, client.nickname)
     }
 
 }
