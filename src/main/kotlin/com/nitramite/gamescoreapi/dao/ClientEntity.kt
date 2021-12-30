@@ -14,6 +14,9 @@ class ClientEntity(
     var createdAt: Instant = Instant.now(),
 
     @Column(name = "updatedat")
-    var updatedAt: Instant = Instant.now()
+    var updatedAt: Instant = Instant.now(),
+
+    @Column(nullable = true, unique = false)
+    var nickname: String? = null
 
 )
