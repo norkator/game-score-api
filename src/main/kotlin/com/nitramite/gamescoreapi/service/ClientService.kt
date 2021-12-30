@@ -6,6 +6,8 @@ import com.nitramite.gamescoreapi.repository.ClientRepository
 import org.springframework.stereotype.Service
 import java.time.Instant
 import java.util.*
+import javax.persistence.EntityNotFoundException
+import kotlin.jvm.Throws
 
 @Service
 class ClientService(private val clientRepository: ClientRepository) {
@@ -23,6 +25,14 @@ class ClientService(private val clientRepository: ClientRepository) {
         val newClient = ClientEntity(clientUid, Instant.now(), Instant.now(), nickname)
         clientRepository.save(newClient)
         return Client.fromDao(newClient)
+    }
+
+    @Throws(EntityNotFoundException::class)
+    fun patchNickname(clientUid: String, nickname: String?): Client {
+        val clientEntity = clientRepository.findByClientUid(clientUid) ?: throw EntityNotFoundException()
+        clientEntity.nickname = nickname
+        clientRepository.save(clientEntity)
+        return Client.fromDao(clientEntity)
     }
 
 }

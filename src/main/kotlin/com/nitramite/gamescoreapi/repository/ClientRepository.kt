@@ -7,4 +7,8 @@ import javax.transaction.Transactional
 
 @Repository
 @Transactional
-interface ClientRepository : CrudRepository<ClientEntity, String>
+interface ClientRepository : CrudRepository<ClientEntity, String> {
+
+    fun findByClientUid(clientUid: String): ClientEntity?
+
+}

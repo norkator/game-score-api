@@ -20,4 +20,9 @@ class ClientController(
         return clientService.addClient(client.clientUid, client.nickname)
     }
 
+    @PatchMapping("/nickname")
+    fun patchNickname(@RequestBody client: Client): Client? {
+        return clientService.patchNickname(client.clientUid, client.nickname)
+    }
+
 }
