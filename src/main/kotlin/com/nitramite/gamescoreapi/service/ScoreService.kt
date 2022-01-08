@@ -20,8 +20,10 @@ class ScoreService(private val scoreRepository: ScoreRepository) {
             return Score.fromDao(newScore)
         } else {
             val existing = scoreEntity.get()
-            existing.score = score
-            scoreRepository.save(existing)
+            if (score > existing.score) {
+                existing.score = score
+                scoreRepository.save(existing)
+            }
             return Score.fromDao(existing)
         }
     }
