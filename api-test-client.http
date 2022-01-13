@@ -52,3 +52,7 @@ Content-Type: application/json
 
 ### Get best scores by game from best to worse order
 GET http://localhost:8080/scores/bestByGame?gameId=1
+
+
+### Get all provided game id's scores for provided client uid
+GET http://localhost:8080/scores/forClient?clientUid=testclient&gameIds=1,2
