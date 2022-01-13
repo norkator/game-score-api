@@ -1,6 +1,7 @@
 package com.nitramite.gamescoreapi.security
 
 import com.nitramite.gamescoreapi.model.User
+import com.nitramite.gamescoreapi.service.PasswordService
 import com.nitramite.gamescoreapi.service.UserService
 import org.springframework.security.authentication.AuthenticationProvider
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken
@@ -13,16 +14,18 @@ import java.util.*
 
 @Component
 class CustomAuthenticationProvider(
-    private val userService: UserService
+    private val userService: UserService,
+    private val passwordService: PasswordService,
 ) : AuthenticationProvider {
 
     @Throws(AuthenticationException::class)
     override fun authenticate(authentication: Authentication): Authentication? {
         val username: String = authentication.name
-        val password: String = authentication.credentials.toString()
+        val password: String = authentication.credentials.toString();
 
-        // Todo implemented salted hashed passwords
-        val user: User = userService.findUserByUsernameAndPassword(username, password) ?: return null
+        val user: User = userService.findUserByUsernameAndPassword(
+            username, passwordService.encodedPassword(password)
+        ) ?: return null
 
         val authorities: MutableList<GrantedAuthority> = ArrayList()
         authorities.add(SimpleGrantedAuthority(user.role))
