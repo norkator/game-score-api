@@ -23,9 +23,12 @@ class CustomAuthenticationProvider(
         val username: String = authentication.name
         val password: String = authentication.credentials.toString();
 
-        val user: User = userService.findUserByUsernameAndPassword(
-            username, passwordService.encodedPassword(password)
-        ) ?: return null
+        val user: User = userService.findUserByUsername(username) ?: return null
+
+        // validate password matches
+        if (!passwordService.checkPassword(password, user.password)) {
+            return null
+        }
 
         val authorities: MutableList<GrantedAuthority> = ArrayList()
         authorities.add(SimpleGrantedAuthority(user.role))
