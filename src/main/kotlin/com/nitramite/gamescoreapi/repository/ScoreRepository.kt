@@ -14,7 +14,7 @@ interface ScoreRepository : CrudRepository<ScoreEntity, Long> {
 
     fun findAllByGameIdAndClientUid(gameId: Long, clientUid: String): Optional<ScoreEntity>
 
-    fun findAllByGameIdAndClientUid(gameId: List<Long>, clientUid: String): Optional<List<ScoreEntity>>
+    fun findAllByGameIdInAndClientUid(gameId: List<Long>, clientUid: String): Optional<List<ScoreEntity>>
 
     fun findAllByGameIdOrderByScoreDesc(gameId: Long): List<ScoreEntity>
 

@@ -48,7 +48,7 @@ class ScoreService(private val scoreRepository: ScoreRepository) {
     }
 
     fun getScoresForClient(clientUid: String, gameIds: List<Long>): ArrayList<Score>? {
-        val scoreEntities: Optional<List<ScoreEntity>> = scoreRepository.findAllByGameIdAndClientUid(gameIds, clientUid)
+        val scoreEntities: Optional<List<ScoreEntity>> = scoreRepository.findAllByGameIdInAndClientUid(gameIds, clientUid)
         val scores: ArrayList<Score> = ArrayList()
         return if (scoreEntities.isPresent) {
             scoreEntities.get().forEach {
