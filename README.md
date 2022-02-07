@@ -1,7 +1,5 @@
 # Game score api
 
-Work in progress!
-
 Spring based score api for generic games. I use this for Spring and Kotlin learning. Requirement for this project is to
 be as simple as possible with as less code as possible. Final implementation most likely uses basic authentication for
 clients to post and get results which is security wise bad, but PR's could bring more security schemas like OAuth or
@@ -51,7 +49,13 @@ You need to have Postgresql server installed. This app needs it as data store.
 
 Installing
 ============
-Run standalone or use docker via `docker-compose up`.
+Run standalone with ide having env var string
+
+```text
+DATABASE_URL=localhost;DATABASE_USERNAME=someuser;DATABASE_PASSWORD=somepassword
+```
+
+or use docker via `docker-compose up`.
 
 1. Create psql database called `game-scores`.
 2. Rename `docker-compose.yml_tpl` to `docker-compose.yml`
@@ -179,13 +183,13 @@ Todo list
     - [x] Create score entity and other tables.
 - [ ] Learn and create tests.
     - [x] Add a skeleton of actions builds pipeline.
-    - [ ] Add tests testing controllers.
+    - [ ] Add tests testing all controllers.
 - [x] Docker configurations.
 - [x] Create build pipeline.
     - [x] Github container registry image via actions.
 - [x] Craft fully functional game score api.
     - [x] Planning.
-- [ ] Some simple authentication system.
+- [x] Some simple authentication system.
     - [x] Planning /Basic auth?
     - [x] Multi user basic auth.
 - [x] Documentations and drawings.
