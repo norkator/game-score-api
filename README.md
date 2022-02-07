@@ -183,13 +183,13 @@ Todo list
     - [x] Create score entity and other tables.
 - [ ] Learn and create tests.
     - [x] Add a skeleton of actions builds pipeline.
-    - [ ] Add tests testing controllers.
+    - [ ] Add tests testing all controllers.
 - [x] Docker configurations.
 - [x] Create build pipeline.
     - [x] Github container registry image via actions.
 - [x] Craft fully functional game score api.
     - [x] Planning.
-- [ ] Some simple authentication system.
+- [x] Some simple authentication system.
     - [x] Planning /Basic auth?
     - [x] Multi user basic auth.
 - [x] Documentations and drawings.
