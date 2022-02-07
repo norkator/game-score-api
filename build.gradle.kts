@@ -26,7 +26,8 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-security")
     runtimeOnly("org.postgresql:postgresql")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
-	testImplementation("io.zonky.test:embedded-database-spring-test:2.1.1")
+	testImplementation ("org.junit.jupiter:junit-jupiter-api:5.8.2")
+	testImplementation ("org.mockito:mockito-core:4.3.1")
 }
 
 tasks.withType<KotlinCompile> {
