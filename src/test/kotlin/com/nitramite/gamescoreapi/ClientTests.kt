@@ -52,4 +52,28 @@ class ClientTests {
             .andExpect(status().isOk())
     }
 
+    @Test
+    @Throws(Exception::class)
+    fun should_post_new_client() {
+        mockMvc!!.perform(
+            MockMvcRequestBuilders
+                .post("/clients/client")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content("{\"clientUid\":\"65865e0a-c0a5-49b5-9070-9b5095abbb69\", \"nickname\": \"SomeNickName\"}")
+        )
+            .andExpect(status().isOk())
+    }
+
+    @Test
+    @Throws(Exception::class)
+    fun should_update_client_with_nickname() {
+        mockMvc!!.perform(
+            MockMvcRequestBuilders
+                .patch("/clients/nickname")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content("{\"clientUid\":\"65865e0a-c0a5-49b5-9070-9b5095abbb69\", \"nickname\": \"SomeNickName\"}")
+        )
+            .andExpect(status().isOk())
+    }
+
 }
