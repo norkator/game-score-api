@@ -19,7 +19,7 @@ import java.time.Instant
 
 
 @WebMvcTest(ClientController::class)
-class ClientTests {
+class ClientControllerTests {
 
     @Autowired
     var mockMvc: MockMvc? = null
