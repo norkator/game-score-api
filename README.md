@@ -181,9 +181,9 @@ Todo list
 - [x] Create score service.
 - [x] Learn migrations.
     - [x] Create score entity and other tables.
-- [ ] Learn and create tests.
+- [x] Learn and create tests.
     - [x] Add a skeleton of actions builds pipeline.
-    - [ ] Add tests testing all controllers.
+    - [x] Add tests testing all controllers.
 - [x] Docker configurations.
 - [x] Create build pipeline.
     - [x] Github container registry image via actions.
@@ -191,7 +191,7 @@ Todo list
     - [x] Planning.
 - [x] Some simple authentication system.
     - [x] Planning /Basic auth?
-    - [x] Multi user basic auth.
+    - [x] Multi-user basic auth.
 - [x] Documentations and drawings.
     - [x] Database structure drawing.
     - [x] Getting started.
