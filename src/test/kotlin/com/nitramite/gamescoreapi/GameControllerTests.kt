@@ -4,6 +4,7 @@ import com.nitramite.gamescoreapi.controller.GameController
 import com.nitramite.gamescoreapi.repository.GameRepository
 import com.nitramite.gamescoreapi.security.CustomAuthenticationProvider
 import com.nitramite.gamescoreapi.service.GameService
+import com.nitramite.gamescoreapi.service.UserService
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
@@ -28,6 +29,9 @@ class GameControllerTests {
     private lateinit var gameService: GameService
 
     @MockBean
+    private lateinit var userService: UserService
+
+    @MockBean
     private lateinit var customAuthProvider: CustomAuthenticationProvider
 
 
@@ -43,6 +47,18 @@ class GameControllerTests {
                 .post("/games/game")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content("{\"name\":\"test game\", \"description\":\"example game\", \"userId\": 1}")
+        )
+            .andExpect(status().isOk())
+    }
+
+    @Test
+    @Throws(Exception::class)
+    fun should_return_games() {
+        mockMvc!!.perform(
+            MockMvcRequestBuilders
+                .get("/games/games")
+                .param("gameId", "1")
+                .contentType(MediaType.APPLICATION_JSON)
         )
             .andExpect(status().isOk())
     }
